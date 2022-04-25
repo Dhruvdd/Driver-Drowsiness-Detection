@@ -1,0 +1,67 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+
+
+
+<style type="text/css">
+.wrapper {
+  width: 400px;
+  background: #fff;
+  margin: 20px auto;
+  height: 450px;
+  border: 1px solid #f3f3f3;
+  margin-top: 50px;
+
+}
+
+.log_btn {
+  cursor: pointer;
+  background: #00A885;
+  width: 100%;
+  height: 40px;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
+  border-radius: 5px;
+}
+
+</style>
+
+
+
+<div class="wrapper">
+<br>
+<br>
+
+<h3 class ="text-center"> Register your account </h3>
+<br>
+
+
+
+<div class = "col-md-8 offset-md-2"> 
+
+<form method="POST" action="{% url 'register' %}">
+		{% csrf_token %}
+
+		
+
+
+		{{ form.as_p }}
+
+
+		<br><input type="submit" value="Register" class="log_btn"><br>
+	</form>
+</div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}
